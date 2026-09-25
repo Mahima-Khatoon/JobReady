@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Interview Practice - JobReady</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+<nav>
+
+    <h2>JobReady</h2>
+
+    <div>
+
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+
+    </div>
+
+</nav>
+
+
+<div class="container">
+
+    <h1>Technical Interview Practice 💻</h1>
+
+    <p>
+        Practice common technical interview questions.
+    </p>
+
+
+    <div class="card">
+
+        <h3>1. What is HTML?</h3>
+
+        <button onclick="showAnswer('answer1')">
+            Show Answer
+        </button>
+
+        <p id="answer1" style="display:none;">
+
+            HTML stands for HyperText Markup Language.
+            It is used to create the structure of web pages.
+
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>2. What is CSS?</h3>
+
+        <button onclick="showAnswer('answer2')">
+            Show Answer
+        </button>
+
+        <p id="answer2" style="display:none;">
+
+            CSS stands for Cascading Style Sheets.
+            It is used to style and design web pages.
+
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>3. What is Python?</h3>
+
+        <button onclick="showAnswer('answer3')">
+            Show Answer
+        </button>
+
+        <p id="answer3" style="display:none;">
+
+            Python is a high-level programming language
+            used for web development, automation and data analysis.
+
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>4. What is SQL?</h3>
+
+        <button onclick="showAnswer('answer4')">
+            Show Answer
+        </button>
+
+        <p id="answer4" style="display:none;">
+
+            SQL stands for Structured Query Language.
+            It is used to manage and retrieve data from databases.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function showAnswer(id) {
+
+    let answer = document.getElementById(id);
+
+    if (answer.style.display === "none") {
+
+        answer.style.display = "block";
+
+    } else {
+
+        answer.style.display = "none";
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>

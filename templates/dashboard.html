@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard - JobReady</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<nav>
+
+    <h2>JobReady</h2>
+
+    <div>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+</nav>
+
+
+<div class="container">
+
+    <h1>Welcome, {{ name }} 👋</h1>
+
+    <p>Start your career and placement preparation.</p>
+
+
+    <div class="dashboard-grid">
+
+        <a href="/profile" class="card">
+            <h2>👤 My Profile</h2>
+            <p>View profile and select target job.</p>
+        </a>
+
+
+        <a href="/skills" class="card">
+            <h2>🎯 Skill Gap Analyzer</h2>
+            <p>Analyze your current skills.</p>
+        </a>
+
+
+        <a href="/roadmap" class="card">
+            <h2>📚 Learning Roadmap</h2>
+            <p>Improve your skills step-by-step.</p>
+        </a>
+
+
+        <a href="/aptitude" class="card">
+            <h2>📝 Aptitude Test</h2>
+            <p>Practice placement aptitude questions.</p>
+        </a>
+
+
+        <a href="/interview" class="card">
+            <h2>💻 Interview Practice</h2>
+            <p>Prepare technical interview questions.</p>
+        </a>
+
+
+        <a href="/progress" class="card">
+            <h2>📊 Progress Dashboard</h2>
+            <p>Track your preparation progress.</p>
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

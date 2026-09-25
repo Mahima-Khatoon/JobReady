@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Skill Gap Analyzer</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+<nav>
+
+    <h2>JobReady</h2>
+
+    <div>
+
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+
+    </div>
+
+</nav>
+
+
+<div class="container">
+
+    <h1>Skill Gap Analyzer 🎯</h1>
+
+    <p>
+        Select your target job and enter your skill level.
+    </p>
+
+
+    <form method="POST">
+
+        <label>Target Job Role</label>
+
+        <select name="job">
+
+            <option>Data Analyst</option>
+            <option>Web Developer</option>
+            <option>Software Developer</option>
+
+        </select>
+
+
+        <label>Excel Level (1-5)</label>
+
+        <input
+            type="number"
+            name="excel"
+            min="1"
+            max="5"
+            required
+        >
+
+
+        <label>SQL Level (1-5)</label>
+
+        <input
+            type="number"
+            name="sql"
+            min="1"
+            max="5"
+            required
+        >
+
+
+        <label>Python Level (1-5)</label>
+
+        <input
+            type="number"
+            name="python"
+            min="1"
+            max="5"
+            required
+        >
+
+
+        <label>Power BI Level (1-5)</label>
+
+        <input
+            type="number"
+            name="powerbi"
+            min="1"
+            max="5"
+            required
+        >
+
+
+        <label>Statistics Level (1-5)</label>
+
+        <input
+            type="number"
+            name="statistics"
+            min="1"
+            max="5"
+            required
+        >
+
+
+        <button type="submit">
+            Analyze Skills
+        </button>
+
+    </form>
+
+
+    {% if result %}
+
+    <div class="result">
+
+        <h2>Skill Analysis Result</h2>
+
+        <h3>
+            Target Job: {{ result.job }}
+        </h3>
+
+
+        <h3>Your Skills</h3>
+
+        <ul>
+
+            {% for skill, level in result.skills.items() %}
+
+            <li>
+                {{ skill }} : {{ level }}/5
+            </li>
+
+            {% endfor %}
+
+        </ul>
+
+
+        <h3>
+            Skills That Need Improvement
+        </h3>
+
+
+        {% if result.weak %}
+
+        <ul>
+
+            {% for skill in result.weak %}
+
+            <li>
+                {{ skill }}
+            </li>
+
+            {% endfor %}
+
+        </ul>
+
+        {% else %}
+
+        <p>
+            Great! All selected skills are at a good level.
+        </p>
+
+        {% endif %}
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+
+</html>

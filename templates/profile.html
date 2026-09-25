@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>My Profile - JobReady</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+<nav>
+
+    <h2>JobReady</h2>
+
+    <div>
+
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+
+    </div>
+
+</nav>
+
+
+<div class="container">
+
+    <h1>My Profile 👤</h1>
+
+
+    <div class="card">
+
+        <h2>Student Information</h2>
+
+        <p>
+            <b>Name:</b>
+            {{ student.name }}
+        </p>
+
+        <p>
+            <b>Email:</b>
+            {{ student.email }}
+        </p>
+
+
+        <hr>
+
+
+        <h2>Select Your Target Job</h2>
+
+
+        <form method="POST">
+
+            <label>Target Job Role</label>
+
+            <select name="job_role" required>
+
+                <option value="">
+                    Select Job Role
+                </option>
+
+                <option value="Data Analyst"
+                {% if student.job_role == "Data Analyst" %}selected{% endif %}>
+                    Data Analyst
+                </option>
+
+                <option value="Web Developer"
+                {% if student.job_role == "Web Developer" %}selected{% endif %}>
+                    Web Developer
+                </option>
+
+                <option value="Software Developer"
+                {% if student.job_role == "Software Developer" %}selected{% endif %}>
+                    Software Developer
+                </option>
+
+            </select>
+
+
+            <button type="submit">
+                Save Job Role
+            </button>
+
+        </form>
+
+
+        {% if message %}
+
+        <div class="result">
+
+            <b>{{ message }}</b>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

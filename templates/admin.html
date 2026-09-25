@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Admin Panel - JobReady</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+<nav>
+
+    <h2>JobReady - Admin</h2>
+
+    <div>
+
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+
+    </div>
+
+</nav>
+
+
+<div class="container">
+
+    <h1>Admin Panel 👨‍💼</h1>
+
+    <p>
+        Manage registered students.
+    </p>
+
+
+    <div class="card">
+
+        <h2>Registered Students</h2>
+
+        <br>
+
+
+        <table>
+
+            <tr>
+
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Job Role</th>
+
+            </tr>
+
+
+            {% for student in students %}
+
+            <tr>
+
+                <td>{{ student.id }}</td>
+
+                <td>{{ student.name }}</td>
+
+                <td>{{ student.email }}</td>
+
+                <td>
+                    {{ student.job_role or "Not Selected" }}
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
